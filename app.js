@@ -14,7 +14,7 @@
 //? document.getElementById e null dekhabe jeta ekta id(duration) diye pabar kotha.
 //? console e er value check korle dekha jabe null dicche .
 //? then html er duration check kore dekhbo id thik moto ache kina.
-//? In this case id was written as doration
+//? In this case id was written as doration.
 
 
 
