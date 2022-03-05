@@ -1,3 +1,25 @@
+
+
+//todo 40-5 Debug fancy slider and fix image display, console table
+//? when debugging - first step can be to open up the dev tool and run the operation againg to find the line from where the error is reported
+
+//? when you are at the breakpoint ,open up conosle using esc. and write data(where the breakpoint was)
+
+//? see if the object keys are spelled correctly ( in this case the hits was written as hitS , thats why the array was undefined)
+
+//todo 40-6 More debug to fix slider to slide by getting duration
+//? slider e thik moto operation hocche na ,etai debugg kora hoise
+
+//? error line er breakpoint dile dekha jabe oi line porjonto code jaccchei na , tai tar thik ager line e amra breakpoint dibo
+//? document.getElementById e null dekhabe jeta ekta id(duration) diye pabar kotha.
+//? console e er value check korle dekha jabe null dicche .
+//? then html er duration check kore dekhbo id thik moto ache kina.
+//? In this case id was written as doration
+
+
+
+
+
 const imagesArea = document.querySelector('.images');
 const gallery = document.querySelector('.gallery');
 const galleryHeader = document.querySelector('.gallery-header');
@@ -19,7 +41,7 @@ const showImages = (images) => {
   gallery.innerHTML = '';
   // show gallery title
   galleryHeader.style.display = 'flex';
-  images.forEach(image => {
+  images.forEach(image => {  //err was code could not read properties of undefined(reading forEach)
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
@@ -31,7 +53,7 @@ const showImages = (images) => {
 const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
-    .then(data => showImages(data.hitS))
+    .then(data => showImages(data.hits))
     .catch(err => console.log(err))
 }
 
